@@ -46,47 +46,32 @@ document.querySelector(".theClick").onclick = () => {
 }
 upgradebuttons = document.querySelectorAll(".upgradeButton");
 
+function buyIdelUp(upgrade,button) {
+    if(data.score>=upgrade.getcost()){
+                    
+        data.score -= upgrade.getcost();
+        upgrade.buy();
+        button.querySelector(".number").innerText = upgrade.getnum();
+        button.querySelector(".cost").innerText = upgrade.getcost();
+    }
+}
 //manages the upgrea buttons actions
 upgradebuttons.forEach(button => {
     button.onclick = () =>{
         switch (button.querySelector(".upgradesText").innerText) {
             case "goblins" :
-                if(data.score>=data.goblins.getcost()){
-                    
-                    data.score -= data.goblins.getcost();
-                    data.goblins.buy();
-                    button.querySelector(".number").innerText = data.goblins.getnum();
-                    button.querySelector(".cost").innerText = data.goblins.getcost();
-                }
+                buyIdelUp(data.goblins,button);
                 break;
             case "gnomes" :
-                if(data.score>=data.gnomes.getcost()){
-                    
-                    data.score -= data.gnomes.getcost();
-                    data.gnomes.buy();
-                    button.querySelector(".number").innerText = data.gnomes.getnum();
-                    button.querySelector(".cost").innerText = data.gnomes.getcost();
-                }
+                buyIdelUp(data.gnomes,button);
                 break;
 
             case "devilDealer" :
-                if(data.score>=data.devilDealer.getcost()){
-                    
-                    data.score -= data.devilDealer.getcost();
-                    data.devilDealer.buy();
-                    button.querySelector(".number").innerText = data.devilDealer.getnum();
-                    button.querySelector(".cost").innerText = data.devilDealer.getcost();
-                }
+                buyIdelUp(data.devilDealer,button);
                 break;
 
             case "luckyMimic" :
-                if(data.score>=data.luckyMimic.getcost()){
-                    
-                    data.score -= data.luckyMimic.getcost();
-                    data.luckyMimic.buy();
-                    button.querySelector(".number").innerText = data.luckyMimic.getnum();
-                    button.querySelector(".cost").innerText = data.luckyMimic.getcost();
-                }
+                buyIdelUp(data.goblins,button);
                 break;
                 
             case "save":
