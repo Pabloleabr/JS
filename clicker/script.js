@@ -71,7 +71,7 @@ upgradebuttons.forEach(button => {
                 break;
 
             case "luckyMimic" :
-                buyIdelUp(data.goblins,button);
+                buyIdelUp(data.luckyMimic,button);
                 break;
                 
             case "save":
