@@ -46,9 +46,8 @@ document.querySelector(".theClick").onclick = () => {
 }
 upgradebuttons = document.querySelectorAll(".upgradeButton");
 
-function buyIdelUp(upgrade,button) {
-    if(data.score>=upgrade.getcost()){
-                    
+function buyUpgButtSetup(upgrade,button) {
+    if(data.score>=upgrade.getcost()){      
         data.score -= upgrade.getcost();
         upgrade.buy();
         button.querySelector(".number").innerText = upgrade.getnum();
@@ -60,18 +59,18 @@ upgradebuttons.forEach(button => {
     button.onclick = () =>{
         switch (button.querySelector(".upgradesText").innerText) {
             case "goblins" :
-                buyIdelUp(data.goblins,button);
+                buyUpgButtSetup(data.goblins,button);
                 break;
             case "gnomes" :
-                buyIdelUp(data.gnomes,button);
+                buyUpgButtSetup(data.gnomes,button);
                 break;
 
             case "devilDealer" :
-                buyIdelUp(data.devilDealer,button);
+                buyUpgButtSetup(data.devilDealer,button);
                 break;
 
             case "luckyMimic" :
-                buyIdelUp(data.luckyMimic,button);
+                buyUpgButtSetup(data.luckyMimic,button);
                 break;
                 
             case "save":
@@ -80,31 +79,19 @@ upgradebuttons.forEach(button => {
                     
             case "powerClick" :
                 if(data.score>=data.powerClick.getcost()){
-                    
-                    data.score -= data.powerClick.getcost();
-                    data.powerClick.buy();
-                    button.querySelector(".number").innerText = data.powerClick.getnum();
-                    button.querySelector(".cost").innerText = data.powerClick.getcost();
+                    buyUpgButtSetup(data.powerClick,button);
                     data.perClick +=1;
                 }
                 break;
             case "chestOpeningPunches" :
                 if(data.score>=data.chestOpeningPunches.getcost()){
-                    
-                    data.score -= data.chestOpeningPunches.getcost();
-                    data.chestOpeningPunches.buy();
-                    button.querySelector(".number").innerText = data.chestOpeningPunches.getnum();
-                    button.querySelector(".cost").innerText = data.chestOpeningPunches.getcost();
+                    buyUpgButtSetup(data.chestOpeningPunches,button);
                     data.perClick +=2;
                 }
                 break;
             case "criticalStrikes" :
                 if(data.score>=data.criticalStrikes.getcost()){
-                    
-                    data.score -= data.criticalStrikes.getcost();
-                    data.criticalStrikes.buy();
-                    button.querySelector(".number").innerText = data.criticalStrikes.getnum();
-                    button.querySelector(".cost").innerText = data.criticalStrikes.getcost();
+                    buyUpgButtSetup(data.criticalStrikes,button);
                     data.critical +=5;
                     if(data.criticalStrikes.getnum()%50==0){data.criticalChance+=1;}
                 }
@@ -119,8 +106,6 @@ setInterval(() => {
 function loop(){
     window.requestAnimationFrame(loop);
     document.querySelector("#score").innerText = data.score;
-    
-
 }
 loop();
 
