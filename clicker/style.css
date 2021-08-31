@@ -1,0 +1,55 @@
+:root {
+    --font: 'Trebuchet MS', sans-serif; 
+  }
+body{
+    background: linear-gradient(hsl(34, 78%, 61%),hsla(60, 94%, 51%, 0.863));
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;/*hides the scrolling bar*/
+}
+
+.center{
+    display: grid;
+    place-items: center;
+     
+}
+
+.theClick{
+   transform: translateY(5vh);
+   position: center;
+   background-color: white;
+   
+   
+}
+
+.scrollBar{
+    display: grid;
+    background-color: hsl(32, 36%, 70%);
+    height: 100vh;
+    width: 30vh;
+    float: right;
+    
+}
+
+#score{
+    font-size:xx-large;
+    font-family: var(--font);
+    font-weight: 600;
+}
+.upgradeButton{
+    font-family: var(--font);
+    font-size: large;
+    font-weight: 500;
+    
+}
+.upgradesText{
+    font-size: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
+.number{
+    font-size: inherit;
+    font-size: inherit;
+    font-family: inherit;
+}
