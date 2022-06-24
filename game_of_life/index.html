@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consways game of life</title>
+    <style>
+        body{
+            margin: 0px;
+            background-color: #222;
+        }
+        body::-webkit-scrollbar{
+            width: 0.4rem;
+            height: 0.4rem;
+        }
+        body::-webkit-scrollbar-track{
+            background: #444444;
+        }
+        body::-webkit-scrollbar-thumb{
+            background: #6649b8;
+        }
+        #bar{
+            border: #242142;
+            display: flex;
+            background-color: #222;
+            z-index: 2;
+            flex-wrap: wrap;
+        }
+        button{
+            margin: 0px;
+            height: 50px;
+            min-width: 80px;
+            background-color: #444444;
+            color: white;
+            border: none;
+        }
+        button:hover{
+            background-color: #222222;
+        }
+        input{
+            height: 44px;
+            font-size: large;
+            max-width: 80px;
+            background-color: #222;
+            color: white;
+        }
+        
+        
+
+    </style>
+</head>
+<body>
+    
+    <div id="bar">
+        <button type="button" id="pause">||</button>
+        <button type="button" id="play">play</button>
+        
+        <button type="button" id="gsize">input grid size</button>
+        <input type="text" id="gisize" value="80"></input>
+        <button type="button" id="cellSizeButton">input cell size</button>
+        <input type="text" id="cellSize" value="10"></input>
+        <button type="button" id="delayinput">speed</button>
+        <div style="color: white;background-color: #444;"
+        >1<input type="range" id="delay" step="10" value="1">10</div>
+        <button type="button" id="fullScreen">fullscreen</button>
+    </div>
+    <canvas></canvas>
+    <script src="gameoflife.js"></script>
+</body>
+</html>
